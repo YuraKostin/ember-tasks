@@ -1,27 +1,29 @@
 <div class="row">
   <div class="col-sm-6">
-    <form class="form-inline">
+    <form class="form-inline" onSubmit={{action "handleSubmit"}}>
       <div class="form-group">
-        {{input type="text" class="form-control"}}
+        <input type="text" class="form-control" value={{taskName}} onInput={{action "handleTaskTitleInput"}}>
       </div>
-      <button class="btn btn-default">Создать задачу</button>
+      <button class="btn btn-default" {{action "create"}}>Создать задачу</button>
     </form>
     <hr/>
-    <h4>Новые задачи: </h4>
+    <h4>Новые задачи: {{newTasks.length}}</h4>
     <hr/>
-    <ol class="list-unstyled">
-      {{#each model as |task|}}
-        <li>
-          {{input type="checkbox"}} {{task.name}}
-          <i class="fa fa-times m-l-10"></i>
-        </li>
-      {{/each}}
-    </ol>
+    {{#task-list tasks=model
+                 handleRemoveClick=(action "delete")
+                 handleChange=(action "updateDoneState")}}{{/task-list}}
   </div>
 </div>
 <div class="row">
   <div class="col-sm-6">
-    <h4>Завершенные задачи: </h4>
+    <h4>Завершенные задачи: {{finishedTasks.length}}</h4>
     <hr/>
+    <ol class="list-unstyled">
+      {{#each finishedTasks as |task|}}
+          <li>
+            {{task.name}}
+          </li>
+      {{/each}}
+    </ol>
   </div>
 </div>

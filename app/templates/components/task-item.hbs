@@ -1,0 +1,5 @@
+<li>
+  <input type="checkbox" onChange={{action "onChange" handleChange task}}>
+  {{task.name}}
+  <i class="fa fa-times m-l-10 remove-icon" onClick={{action "onRemoveClick" handleRemoveClick task}}></i>
+</li>

@@ -1,0 +1,7 @@
+<ol class="list-unstyled">
+  {{#each tasks as |task|}}
+    {{#task-item task=task
+                 handleRemoveClick=handleRemoveClick
+                 handleChange=handleChange}}{{/task-item}}
+  {{/each}}
+</ol>
