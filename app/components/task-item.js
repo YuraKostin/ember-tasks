@@ -5,8 +5,8 @@ export default Ember.Component.extend({
     /**
      * Handle click
      * Calling controller function with task object
-     * @param{function} controllerAction
-     * @param{Object} task
+     * @param {function} controllerAction
+     * @param {Object} task
      */
     onRemoveClick(controllerAction, task) {
       controllerAction(task);
@@ -15,9 +15,9 @@ export default Ember.Component.extend({
     /**
      * Handle checkbox state change
      * Toggle task element class name
-     * @param{function} controllerAction
-     * @param{Object} task
-     * @param{Event} target
+     * @param {function} controllerAction
+     * @param {Object} task
+     * @param {Event} target
      */
     onChange(controllerAction, task, {target}) {
       const {checked = false} = target || {};

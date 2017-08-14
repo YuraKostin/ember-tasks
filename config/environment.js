@@ -4,8 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ember-tasks',
     environment: environment,
-    rootURL: '/',
-    locationType: 'auto',
+    rootURL: '/ember-tasks/dist/',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

@@ -26,7 +26,7 @@ export default Ember.Controller.extend({
 
     /**
      * Delete task
-     * @param{Object} task
+     * @param {Object} task
      */
     delete(task) {
       task.destroyRecord();
@@ -34,7 +34,7 @@ export default Ember.Controller.extend({
 
     /**
      * Update task `done` state
-     * @param{Object} task
+     * @param {Object} task
      */
     updateDoneState(task) {
       task.set('done', !task.get('done'));
@@ -43,7 +43,7 @@ export default Ember.Controller.extend({
 
     /**
      * Set `taskName` value
-     * @param{Event} target
+     * @param {Event} target
      */
     handleTaskTitleInput({target}) {
       const {value = ''} = target || {};
@@ -52,7 +52,7 @@ export default Ember.Controller.extend({
 
     /**
      * Prevent default behaviour on task form submit
-     * @param{Event} e
+     * @param {Event} e
      */
     handleSubmit(e) {
       e.preventDefault();
